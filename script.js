@@ -4,9 +4,7 @@ document.getElementById("myVideo").muted = true;
 let mainVideo = document.getElementById("myVideo");
 let logBtn = document.getElementById("l-btn");
 let subBtn = document.getElementById("s-btn");
-let upcomingVideo = document.querySelectorAll(".vid-s");
-
-console.log(upcomingVideo.length);
+let upCom = document.querySelectorAll(".vid-s");
 
 // Event Listeners
 mainVideo.addEventListener("mouseover", ()=> {
@@ -25,13 +23,19 @@ subBtn.addEventListener("click", ()=> {
     subStatus();
 });
 
-upcomingVideo.forEach(element => element.addEventListener("click", ()=> {
-    addHover();
-}));
+// lotta text :C
+// console.log(upCom.length);
+// for (let i=0; i<upCom.length; i++) {
+//     console.log(upCom[i].innerHTML);
+//     upCom[i].addEventListener("mouseover",function(e){
+//         addHover(e);
+//     });
+// }
 
-// upcomingVideo.addEventListener("mouseleave", ()=> {
-//     removeHover();
-// });
+upCom.forEach((el) => el.addEventListener("mouseover", ()=> addHover(el)));
+
+upCom.forEach((el) => el.addEventListener("mouseleave", ()=> removeHover(el)));
+
 
 // Functions
 function playVideo() {
@@ -60,11 +64,11 @@ function subStatus() {
     }
 }
 
-function addHover() {
+function addHover(el) {
     console.log("starting addHover()...")
-    upcomingVideo.classList.add("video-small-hover");
+    el.classList.add("video-small-hover");
 }
 
-function removeHover() {
-    // upcomingVideo.classList.remove("video-small-hover");
+function removeHover(el) {
+    el.classList.remove("video-small-hover");
 }
