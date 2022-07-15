@@ -32,7 +32,17 @@ subBtn.addEventListener("click", ()=> {
 //     });
 // }
 
-upCom.forEach((el) => el.addEventListener("mouseover", ()=> addHover(el)));
+// upCom.forEach((el) => el.addEventListener("mouseover", ()=> addHover(el)));
+
+// upCom.forEach( function(e){
+//     e.addEventListener("mouseover", ()=> addHover(e));
+// });
+
+upCom.forEach( function(e){
+    e.addEventListener("mouseover", function() {
+        addHover(e);
+    });
+});
 
 upCom.forEach((el) => el.addEventListener("mouseleave", ()=> removeHover(el)));
 

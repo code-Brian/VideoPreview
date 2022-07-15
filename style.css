@@ -44,6 +44,10 @@ body {
     cursor: pointer;
 }
 
+.log-btn:hover, .sub-btn:hover {
+    background-color: rgba(231, 14, 231, 0.5);
+}
+
 .sub-btn {
     background-color: rebeccapurple;
     color: #fff;
